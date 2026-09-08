@@ -7,13 +7,13 @@
   --ai:#1c3557;        /* 藍 */
   --ai-d:#132540;
   --enji:#8f3a2e;      /* 臙脂（差し色・使いすぎない） */
-  --ink:#222;
-  --ink2:#555;
-  --ink3:#777;
-  --line:#d8d4cc;
-  --line2:#ebe7e0;
-  --bg:#fff;
-  --bg2:#f6f4f0;
+  --ink:#26241f;       /* 墨（純黒を避け、紙に馴染ませる） */
+  --ink2:#54504a;
+  --ink3:#7d786f;
+  --line:#d3ccbd;
+  --line2:#e7e1d4;
+  --bg:#fdfcf8;        /* 白練（わずかに生成り寄りの紙色） */
+  --bg2:#f4f0e7;       /* 生成り */
   --mincho:"Yu Mincho","YuMincho","Hiragino Mincho ProN","MS PMincho",serif;
   --gothic:"Hiragino Kaku Gothic ProN","Yu Gothic","YuGothic","Meiryo",sans-serif;
 }
@@ -24,7 +24,7 @@ body{
   margin:0;
   font-family:var(--gothic);
   font-size:15px;
-  line-height:1.85;
+  line-height:1.95;
   color:var(--ink);
   background:var(--bg);
 }
@@ -52,7 +52,7 @@ ul{margin:0;padding:0}
 .hdr-tel .hours{font-size:11px;color:var(--ink3)}
 
 /* ------- グローバルナビ ------- */
-.gnav{border-bottom:1px solid var(--line);background:#fff}
+.gnav{border-bottom:1px solid var(--line);background:var(--bg)}
 .gnav ul{max-width:1000px;margin:0 auto;padding:0 20px;display:flex;list-style:none;flex-wrap:wrap}
 .gnav li{border-left:1px solid var(--line2)}
 .gnav li:last-child{border-right:1px solid var(--line2)}
@@ -83,16 +83,20 @@ ul{margin:0;padding:0}
 
 /* ------- 見出し ------- */
 .h2{
-  font-family:var(--mincho);font-size:21px;letter-spacing:.06em;font-weight:600;
-  padding-left:12px;border-left:4px solid var(--ai);margin-bottom:20px;
+  font-family:var(--mincho);font-size:21px;letter-spacing:.08em;font-weight:600;
+  padding:0 0 11px 13px;border-left:2px solid var(--ai);
+  border-bottom:1px solid var(--line2);margin-bottom:22px;
 }
-.h3{font-size:16px;margin-bottom:8px}
+.h3{font-family:var(--mincho);font-size:16.5px;letter-spacing:.04em;margin-bottom:8px}
 
 /* ------- ブロック ------- */
-.sec{padding:44px 0}
+.sec{padding:48px 0}
 .sec.tint{background:var(--bg2);border-top:1px solid var(--line2);border-bottom:1px solid var(--line2)}
-.lead{max-width:44em;color:var(--ink2)}
-.lead p+p{margin-top:1.2em}
+.lead{
+  max-width:41em;color:var(--ink2);
+  font-family:var(--mincho);font-size:15.5px;line-height:2.1;
+}
+.lead p+p{margin-top:1.4em}
 
 /* ------- お知らせ ------- */
 .news{list-style:none;border-top:1px solid var(--line2)}
@@ -111,8 +115,10 @@ ul{margin:0;padding:0}
 .biz-hd{background:var(--bg2);border-bottom:1px solid var(--line);padding:14px 20px}
 .biz-hd h3{font-family:var(--mincho);font-size:19px;letter-spacing:.05em}
 .biz-hd .en{font-size:10.5px;letter-spacing:.14em;color:var(--ink3)}
-.biz-bd{padding:20px}
+.biz-bd{padding:22px 22px 24px}
 .biz-bd p+p{margin-top:1em}
+.biz-bd .t{font-family:var(--mincho);font-size:15.5px;letter-spacing:.04em;margin-bottom:4px}
+.biz-bd .t+p{color:var(--ink2)}
 
 .flow{list-style:none;counter-reset:f;margin-top:18px}
 .flow li{
@@ -135,11 +141,11 @@ ul{margin:0;padding:0}
   display:inline-block;padding:10px 30px;background:var(--ai);color:#fff;
   text-decoration:none;font-size:14px;border:1px solid var(--ai);
 }
-.btn:hover{background:#fff;color:var(--ai)}
-.btn.ghost{background:#fff;color:var(--ai)}
+.btn:hover{background:var(--bg);color:var(--ai)}
+.btn.ghost{background:var(--bg);color:var(--ai)}
 .btn.ghost:hover{background:var(--ai);color:#fff}
 
-.cta{border:1px solid var(--line);background:#fff;padding:22px 24px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.cta{border:1px solid var(--line);background:var(--bg);padding:22px 24px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
 .cta .num{font-family:var(--mincho);font-size:27px;color:var(--ai);line-height:1.2}
 .cta .num a{text-decoration:none;color:inherit}
 .cta .hours{font-size:11.5px;color:var(--ink3)}
