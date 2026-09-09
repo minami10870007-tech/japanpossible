@@ -76,9 +76,16 @@ ul{margin:0;padding:0}
 .phead h1{font-family:var(--mincho);font-size:26px;letter-spacing:.08em;font-weight:600}
 .phead span{display:block;font-size:10.5px;letter-spacing:.16em;color:#a9bdd6;margin-top:3px}
 
-/* ------- トップの見出し帯 ------- */
-.kv{background:var(--ai);color:#fff}
-.kv-in{max-width:1000px;margin:0 auto;padding:52px 20px}
+/* ------- トップの見出し帯 -------
+   images/kv.jpg を置くと背景写真になる。無い場合は藍のベタ塗りのまま。 */
+.kv{
+  position:relative;color:#fff;
+  background:var(--ai) url("../images/kv.jpg") center center/cover no-repeat;
+}
+.kv::before{
+  content:"";position:absolute;inset:0;background:rgba(10,12,16,.52);
+}
+.kv-in{position:relative;max-width:1000px;margin:0 auto;padding:96px 20px}
 .kv h1{font-family:var(--mincho);font-size:31px;line-height:1.75;letter-spacing:.05em;font-weight:600}
 .kv h1 em{font-style:normal;color:#e9b8ae}
 .kv p{margin-top:16px;font-size:14px;line-height:2;color:#cfd9e5;max-width:40em}
@@ -175,7 +182,7 @@ ul{margin:0;padding:0}
 
 /* ------- 狭い画面 ------- */
 @media (max-width:860px){
-  .kv-in{padding:36px 20px}
+  .kv-in{padding:56px 20px}
   .access{grid-template-columns:1fr}
   .cta{grid-template-columns:1fr}
   .foot .inner{grid-template-columns:1fr;gap:20px}
