@@ -90,6 +90,11 @@ ul{margin:0;padding:0}
 .kv h1{font-family:var(--mincho);font-size:31px;line-height:1.75;letter-spacing:.05em;font-weight:600}
 .kv h1 em{font-style:normal;color:#e9b8ae}
 .kv p{margin-top:16px;font-size:14px;line-height:2;color:#cfd9e5;max-width:40em}
+.kv .en{
+  display:inline-block;margin-top:24px;padding-top:15px;
+  font-size:11px;letter-spacing:.2em;line-height:1.95;color:rgba(232,227,216,.62);
+  border-top:1px solid rgba(232,227,216,.3);
+}
 
 /* ------- 見出し ------- */
 .h2{
