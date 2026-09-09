@@ -1,19 +1,21 @@
 @charset "utf-8";
 
 /* Japan Possible株式会社 コーポレートサイト
-   最終更新 2026-09-07 */
+   最終更新 2026-09-09 */
 
 :root{
-  --ai:#1c3557;        /* 藍 */
+  --ai:#1c3557;        /* 藍（帯・ボタンの地色） */
+  --ai-l:#8fa9c8;      /* 淡藍（黒地の上に置く文字・罫） */
   --ai-d:#132540;
-  --enji:#8f3a2e;      /* 臙脂（差し色・使いすぎない） */
-  --ink:#26241f;       /* 墨（純黒を避け、紙に馴染ませる） */
-  --ink2:#54504a;
-  --ink3:#7d786f;
-  --line:#d3ccbd;
-  --line2:#e7e1d4;
-  --bg:#fdfcf8;        /* 白練（わずかに生成り寄りの紙色） */
-  --bg2:#f4f0e7;       /* 生成り */
+  --enji:#8f3a2e;      /* 臙脂 */
+  --enji-l:#c47a68;    /* 淡臙脂（黒地の上の差し色・使いすぎない） */
+  --ink:#e8e3d8;       /* 生成り（本文） */
+  --ink2:#b0aba1;
+  --ink3:#948f85;
+  --line:#34373d;
+  --line2:#262a30;
+  --bg:#15171b;        /* 墨 */
+  --bg2:#1c1f26;       /* 面（一段明るい黒） */
   --mincho:"Yu Mincho","YuMincho","Hiragino Mincho ProN","MS PMincho",serif;
   --gothic:"Hiragino Kaku Gothic ProN","Yu Gothic","YuGothic","Meiryo",sans-serif;
 }
@@ -29,8 +31,8 @@ body{
   background:var(--bg);
 }
 img{max-width:100%;height:auto;vertical-align:bottom}
-a{color:var(--ai)}
-a:hover{color:var(--enji)}
+a{color:var(--ai-l)}
+a:hover{color:var(--enji-l)}
 h1,h2,h3,h4{margin:0;font-weight:600;line-height:1.5}
 p{margin:0}
 ul{margin:0;padding:0}
@@ -38,7 +40,7 @@ ul{margin:0;padding:0}
 .inner{max-width:1000px;margin:0 auto;padding:0 20px}
 
 /* ------- ヘッダー ------- */
-.hdr{border-top:3px solid var(--ai);border-bottom:1px solid var(--line)}
+.hdr{border-top:3px solid var(--ai-l);border-bottom:1px solid var(--line)}
 .hdr-in{
   max-width:1000px;margin:0 auto;padding:12px 20px;
   display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
@@ -47,7 +49,7 @@ ul{margin:0;padding:0}
 .logo b{display:block;font-family:var(--mincho);font-size:21px;font-weight:600;letter-spacing:.04em}
 .logo small{display:block;font-size:10.5px;color:var(--ink3);letter-spacing:.06em;margin-top:1px}
 .hdr-tel{text-align:right;line-height:1.4}
-.hdr-tel .num{font-family:var(--mincho);font-size:23px;color:var(--ai);letter-spacing:.02em}
+.hdr-tel .num{font-family:var(--mincho);font-size:23px;color:var(--ai-l);letter-spacing:.02em}
 .hdr-tel .num a{text-decoration:none;color:inherit}
 .hdr-tel .hours{font-size:11px;color:var(--ink3)}
 
@@ -59,8 +61,8 @@ ul{margin:0;padding:0}
 .gnav a{
   display:block;padding:13px 26px;font-size:13.5px;text-decoration:none;color:var(--ink);
 }
-.gnav a:hover{background:var(--bg2);color:var(--ai)}
-.gnav a[aria-current="page"]{color:var(--ai);box-shadow:inset 0 -2px 0 var(--ai)}
+.gnav a:hover{background:var(--bg2);color:var(--ai-l)}
+.gnav a[aria-current="page"]{color:var(--ai-l);box-shadow:inset 0 -2px 0 var(--ai-l)}
 
 /* ------- パンくず ------- */
 .crumb{background:var(--bg2);border-bottom:1px solid var(--line2);font-size:11.5px;color:var(--ink3)}
@@ -84,7 +86,7 @@ ul{margin:0;padding:0}
 /* ------- 見出し ------- */
 .h2{
   font-family:var(--mincho);font-size:21px;letter-spacing:.08em;font-weight:600;
-  padding:0 0 11px 13px;border-left:2px solid var(--ai);
+  padding:0 0 11px 13px;border-left:2px solid var(--ai-l);
   border-bottom:1px solid var(--line2);margin-bottom:22px;
 }
 .h3{font-family:var(--mincho);font-size:16.5px;letter-spacing:.04em;margin-bottom:8px}
@@ -127,7 +129,7 @@ ul{margin:0;padding:0}
 }
 .flow li::before{
   content:counter(f,decimal-leading-zero);position:absolute;left:0;top:9px;
-  font-family:var(--mincho);font-size:14px;color:var(--enji);letter-spacing:.04em;
+  font-family:var(--mincho);font-size:14px;color:var(--enji-l);letter-spacing:.04em;
 }
 
 /* ------- 表 ------- */
@@ -138,15 +140,15 @@ ul{margin:0;padding:0}
 
 /* ------- ボタン・CTA ------- */
 .btn{
-  display:inline-block;padding:10px 30px;background:var(--ai);color:#fff;
-  text-decoration:none;font-size:14px;border:1px solid var(--ai);
+  display:inline-block;padding:10px 30px;background:var(--ai);color:var(--ink);
+  text-decoration:none;font-size:14px;border:1px solid var(--ai-l);
 }
-.btn:hover{background:var(--bg);color:var(--ai)}
-.btn.ghost{background:var(--bg);color:var(--ai)}
-.btn.ghost:hover{background:var(--ai);color:#fff}
+.btn:hover{background:var(--ai-l);color:var(--bg)}
+.btn.ghost{background:transparent;color:var(--ai-l)}
+.btn.ghost:hover{background:var(--ai-l);color:var(--bg)}
 
 .cta{border:1px solid var(--line);background:var(--bg);padding:22px 24px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
-.cta .num{font-family:var(--mincho);font-size:27px;color:var(--ai);line-height:1.2}
+.cta .num{font-family:var(--mincho);font-size:27px;color:var(--ai-l);line-height:1.2}
 .cta .num a{text-decoration:none;color:inherit}
 .cta .hours{font-size:11.5px;color:var(--ink3)}
 
@@ -169,7 +171,7 @@ ul{margin:0;padding:0}
 /* ------- 補助 ------- */
 .pending{color:var(--ink3)}
 .updated{font-size:11.5px;color:var(--ink3);text-align:right;padding-bottom:20px}
-:focus-visible{outline:2px solid var(--enji);outline-offset:2px}
+:focus-visible{outline:2px solid var(--enji-l);outline-offset:2px}
 
 /* ------- 狭い画面 ------- */
 @media (max-width:860px){
